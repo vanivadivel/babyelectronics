@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Electronics | Your Modern Tech & Appliance Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#ec4899', // Pink
+                            600: '#db2777',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-content.active {
+            display: grid;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-600 via-purple-500 to-accent-500 text-white text-center py-2 px-4 text-sm font-medium tracking-wide">
+        🎉 MEGA SUPER SALE! Up to 70% OFF on selected Home Appliances. Visit our store in Paramathi Velur today!
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=150&q=80" alt="Baby Picture" class="h-12 w-12 rounded-full object-cover border-2 border-brand-100 shadow-sm">
+                    <span class="font-bold text-2xl tracking-tight text-gray-900">Baby <span class="text-brand-600">Electronics</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Home</a>
+                    <a href="#products" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Products</a>
+                    <a href="#about" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">About Us</a>
+                    <a href="#contact" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="hidden md:flex items-center">
+                    <a href="tel:+910000000000" class="flex items-center gap-2 bg-brand-50 text-brand-700 px-5 py-2.5 rounded-full font-semibold hover:bg-brand-100 transition">
+                        <i class="ph ph-phone-call text-xl"></i>
+                        Enquire Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-10 sm:pt-16 lg:pt-20">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <span class="inline-block py-1 px-3 rounded-full bg-pink-100 text-accent-600 text-sm font-semibold mb-4 border border-pink-200 shadow-sm">
+                            🏆 21 Years of Excellence
+                        </span>
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block xl:inline">Upgrade Your Life with</span>
+                            <span class="block gradient-text">Modern Technology</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Your ultimate destination for the latest mobiles, televisions, and smart home appliances in Paramathi Velur, Namakkal. Unbeatable prices & exceptional after-sales service.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start gap-4">
+                            <a href="#products" class="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all md:py-4 md:text-lg">
+                                Shop Collection
+                            </a>
+                            <a href="#contact" class="flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 hover:text-brand-600 transition-all md:py-4 md:text-lg mt-3 sm:mt-0">
+                                Find Our Store
+                            </a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full clip-path-hero" 
+                 src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Modern electronics setup">
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent lg:from-white/80"></div>
+        </div>
+    </section>
+
+    <!-- Modern Tabs / Product Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-2">Our Collection</h2>
+                <h3 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Explore by Categories</h3>
+                <p class="mt-4 text-gray-500 text-lg">Browse our extensive range of premium products sorted just for you.</p>
+            </div>
+
+            <!-- Tabs Controls -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="openTab('mobiles')" data-target="mobiles" class="tab-btn active px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-brand-600 text-white shadow-md flex items-center gap-2">
+                    <i class="ph ph-device-mobile text-xl"></i> Smartphones
+                </button>
+                <button onclick="openTab('appliances')" data-target="appliances" class="tab-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 flex items-center gap-2">
+                    <i class="ph ph-washing-machine text-xl"></i> Appliances
+                </button>
+                <button onclick="openTab('tv')" data-target="tv" class="tab-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 flex items-center gap-2">
+                    <i class="ph ph-television text-xl"></i> Televisions
+                </button>
+            </div>
+
+            <!-- Tab Content: Mobiles -->
+            <div id="mobiles" class="tab-content active grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                        <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded z-10">HOT</span>
+                        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop" alt="Phone" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Samsung</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Galaxy Ultra Pro</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹89,999</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop" alt="Phone" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Apple</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">iPhone 15 Pro</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹1,34,900</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                        <img src="img/oneplus.png" alt="Phone" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">OnePlus</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">OnePlus 12 5G</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹64,999</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                        <span class="absolute top-3 left-3 bg-brand-500 text-white text-xs font-bold px-2 py-1 rounded z-10">NEW</span>
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&auto=format&fit=crop" alt="Phone" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Vivo</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Vivo X100 Pro</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹89,999</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Appliances -->
+            <div id="appliances" class="tab-content grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                        <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&auto=format&fit=crop" alt="Appliance" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">LG</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Double Door Refrigerator 340L</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹34,500 <span class="text-sm text-gray-400 line-through font-normal">₹42,000</span></p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                        <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&auto=format&fit=crop" alt="Appliance" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Bosch</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Front Load Washing Machine</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹29,900</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                 <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                         <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded z-10">SUMMER SALE</span>
+                        <img src="img/daikin.png" alt="Appliance" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Daikin</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">1.5 Ton 5 Star Split AC</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹41,200</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                 <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-white p-4 flex justify-center items-center h-56 border-b border-gray-50">
+                        <img src="https://images.unsplash.com/photo-1585659722983-39cb8eca8da3?w=400&auto=format&fit=crop" alt="Appliance" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Preethi</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Zodiac Mixer Grinder</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹8,500</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Televisions -->
+            <div id="tv" class="tab-content grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-gray-900 p-0 flex justify-center items-center h-56">
+                        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop" alt="TV" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Sony</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Bravia 65" 4K Ultra HD Smart LED TV</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹82,990</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-gray-900 p-0 flex justify-center items-center h-56">
+                        <img src="https://images.unsplash.com/photo-1603732551658-5fabbafa84f3?w=600&auto=format&fit=crop" alt="TV" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Samsung</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">55" Crystal 4K Neo Series</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹46,990</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="relative bg-gray-900 p-0 flex justify-center items-center h-56">
+                         <span class="absolute top-3 left-3 bg-brand-500 text-white text-xs font-bold px-2 py-1 rounded z-10">BEST VALUE</span>
+                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&auto=format&fit=crop" alt="TV" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Mi</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">43" X Series 4K Smart Android TV</h4>
+                        <p class="text-brand-600 font-extrabold text-xl mt-auto">₹26,499</p>
+                        <button class="mt-4 w-full border border-brand-600 text-brand-600 rounded-lg py-2 font-semibold hover:bg-brand-600 hover:text-white transition-colors">Quick View</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition shadow-lg">View All Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-2">Why Baby Electronics?</h2>
+                    <h3 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Over 21 Years of Trust in Namakkal</h3>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Since our establishment, we've been committed to bringing the best technology and home appliances to Paramathi Velur. With thousands of happy customers, we pride ourselves on offering genuine products paired with an unmatched after-sales experience.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-xl text-brand-600">
+                                <i class="ph ph-shield-check text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Genuine Brands</h4>
+                                <p class="text-sm text-gray-500 mt-1">100% authentic products with official warranties.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-pink-100 p-3 rounded-xl text-accent-600">
+                                <i class="ph ph-wrench text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Best After-Sales</h4>
+                                <p class="text-sm text-gray-500 mt-1">Dedicated support team to resolve your issues quickly.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-purple-100 p-3 rounded-xl text-purple-600">
+                                <i class="ph ph-tag text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Reasonable Prices</h4>
+                                <p class="text-sm text-gray-500 mt-1">Competitive pricing & frequent super sales.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-100 p-3 rounded-xl text-green-600">
+                                <i class="ph ph-truck text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Fast Delivery</h4>
+                                <p class="text-sm text-gray-500 mt-1">Prompt delivery across Namakkal and surrounding areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Highlight -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-600 to-accent-500 rounded-3xl transform rotate-3 scale-105 opacity-20"></div>
+                    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 relative z-10">
+                        <div class="flex text-yellow-400 mb-4 text-xl">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-4">"Excellent After-Sales Service"</h4>
+                        <p class="text-gray-600 italic mb-6 text-lg">
+                            "I had an excellent experience with Baby Electronics' after-sales service. The prices were reasonable and the staff was very helpful. They quickly resolved my issue with a faulty product and provided me with a replacement without any hassle."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-gradient-to-r from-brand-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl">
+                                K
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900">Karthik</h5>
+                                <span class="text-sm text-gray-500">Verified Customer (Justdial)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Footer -->
+    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=150&q=80" alt="Baby Picture" class="h-10 w-10 rounded-full object-cover border-2 border-brand-400 shadow-sm">
+                        <span class="font-bold text-2xl tracking-tight text-white">Baby <span class="text-brand-400">Electronics</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Your trusted dealer for mobile phones, TVs, and electronic goods in Paramathi Velur since 21 years.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-600 hover:text-white transition"><i class="ph ph-facebook-logo text-xl"></i></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-accent-600 hover:text-white transition"><i class="ph ph-instagram-logo text-xl"></i></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-400 hover:text-white transition"><i class="ph ph-twitter-logo text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 border-b border-gray-800 pb-2">Categories</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Smartphones</a></li>
+                        <li><a href="#" class="hover:text-white transition">Televisions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Air Conditioners</a></li>
+                        <li><a href="#" class="hover:text-white transition">Refrigerators</a></li>
+                        <li><a href="#" class="hover:text-white transition">Washing Machines</a></li>
+                    </ul>
+                </div>
+
+                <!-- Store Info -->
+                <div class="lg:col-span-2 bg-gray-800 p-6 rounded-2xl border border-gray-700">
+                    <h4 class="font-bold text-lg mb-6 text-white flex items-center gap-2"><i class="ph ph-map-pin text-brand-400"></i> Visit Our Store</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-gray-300 font-medium mb-1">Baby Electronics</p>
+                            <p class="text-gray-400 text-sm mb-4">No 184, Siva Theatre Corner,<br>Bye Pass Road, Paramathi Velur,<br>Namakkal-638182, Tamil Nadu.</p>
+                            
+                            <div class="flex items-center gap-2 text-sm text-gray-400 mt-2">
+                                <i class="ph ph-clock text-brand-400"></i> Opens at 09:00 AM
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3">
+                            <a href="https://www.google.com/maps/place/Baby+Electronics/@11.1120985,78.0014775,17z" target="_blank" class="w-full bg-white text-gray-900 py-3 px-4 rounded-lg font-semibold text-center hover:bg-gray-100 transition shadow flex items-center justify-center gap-2">
+                                <i class="ph ph-navigation-arrow"></i> Get Directions
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Baby Electronics. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Tab Functionality -->
+    <script>
+        function openTab(tabName) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Show requested tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Reset all buttons styling
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if(btn.dataset.target === tabName) {
+                    btn.className = "tab-btn active px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-brand-600 text-white shadow-md flex items-center gap-2";
+                } else {
+                    btn.className = "tab-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 flex items-center gap-2";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
